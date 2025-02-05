@@ -72,7 +72,7 @@ class NNStreamerExample:
         # init pipeline
         self.pipeline = Gst.parse_launch(
           'v4l2src name=cam_src ! imxvideoconvert_pxp ! '
-          'video/x-raw,width=640,height=480,format=UYVY ! '
+          'video/x-raw,width=640,height=480,format=BGRx ! '
           'tee name=t_raw '
           't_raw. ! queue ! textoverlay name=overlay font-desc="Sans, 26" ! '
           'imxvideoconvert_pxp ! fpsdisplaysink name=img_tensor sync=false '
